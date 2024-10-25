@@ -34,3 +34,12 @@ pipeline:
                     shell: Sh
                     command: echo "welcome"
                   description: test
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: BuildAndPushDockerRegistry_1
+                  identifier: BuildAndPushDockerRegistry_1
+                  spec:
+                    connectorRef: account.harnessImage
+                    repo: pendyalarohithp/test_docker
+                    tags: <+input>
+                    caching: false
